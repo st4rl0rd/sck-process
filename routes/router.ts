@@ -9,6 +9,17 @@ router.get('/mensajes',( req: Request, res: Response ) => {
   });
 });
 
+router.post('/mensajes',( req: Request, res: Response ) => {
+  const cuerpo = req.body.cuerpo;
+  const de = req.body.de;
+  const id = req.params.id;
+  res.json({
+    ok: true,
+    cuerpo: cuerpo,
+    de: de
+  });
+});
+
 router.post('/mensajes:id',( req: Request, res: Response ) => {
   const cuerpo = req.body.cuerpo;
   const de = req.body.de;
